@@ -1,12 +1,13 @@
-name: Hello World
-
 on:
-  workflow_dispatch:  # allows manual runs from Actions tab
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Praveen'
+        required: true
+        default: 'GitHub User'
 
 jobs:
-  say-hello:
+  greet:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Say Hello
-        run: echo "Hello, ${{ github.actor }}! This run was triggered manually."
+      - run: echo "Hello, ${{ github.event.inputs.username }}!"

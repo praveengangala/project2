@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: Say Hello
-        run: echo "👋 Hello from GitHub Actions!"
+        run: echo "Hello, ${{ github.actor }}! This run was triggered manually."
